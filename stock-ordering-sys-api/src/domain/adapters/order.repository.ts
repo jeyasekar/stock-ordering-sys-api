@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { IOrderRepository } from "src/domain/adapters/iorder.repository";
+import { IOrderPort } from "src/domain/adapters/order.port";
 import { OrderMapper } from "src/infrastructure/mapper/order.mapper";
 import { Repository } from "typeorm";
 import { Optional } from "typescript-optional";
@@ -8,7 +8,7 @@ import { OrderTrack } from "src/domain/entities/order.entity";
 import { OrderModel } from "src/domain/models/order.model";
 
 @Injectable()
-export class OrderRepository implements IOrderRepository {
+export class OrderRepository implements IOrderPort {
     constructor(@InjectRepository(OrderTrack) private OrderRepository: Repository<OrderTrack>) {
         console.log('OrderRepository created')
     }

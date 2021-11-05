@@ -21,7 +21,7 @@ export class ConfigService {
         console.log('svc created')
     }
     private getValue(key: string, throwOnMissing = true): string {
-       // console.log('+++++this.env',this.env)
+        // console.log('+++++this.env',this.env)
         const value = process.env[key]
         if (!value && throwOnMissing) {
             throw new Error(`config error - missing env.${key}`)
@@ -74,8 +74,13 @@ export class ConfigService {
         return this
     }
 
-    public getBaseURl(key: string){
-         return this.getValue(key, true)
+    public getBaseURl(key: string) {
+        return this.getValue(key, true)
     }
-    
+
+    public getLogLevel(): string {
+        const level = this.getValue('PRODUCT_LOG_LEVEL', false)
+        return level
+    }
+
 }
