@@ -1,5 +1,5 @@
 import { OrderTrack } from "src/domain/entities/order.entity"
-import { OrderModel } from "src/domain/models/order.model"
+import { OrderModel } from "..//../domain/models/order.model"
 import { Optional } from "typescript-optional"
 
 export class OrderMapper {

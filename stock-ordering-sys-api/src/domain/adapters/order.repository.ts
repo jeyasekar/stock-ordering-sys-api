@@ -1,11 +1,11 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { IOrderPort } from "src/domain/adapters/order.port";
-import { OrderMapper } from "src/infrastructure/mapper/order.mapper";
+import { OrderMapper } from "..//../infrastructure/mapper/order.mapper";
 import { Repository } from "typeorm";
 import { Optional } from "typescript-optional";
-import { OrderTrack } from "src/domain/entities/order.entity";
-import { OrderModel } from "src/domain/models/order.model";
+import { OrderTrack } from "..//../domain/entities/order.entity";
+import { OrderModel } from "..//../domain/models/order.model";
 
 @Injectable()
 export class OrderRepository implements IOrderPort {
